@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 
 
 const app = express();
+const port = process.env.PORT || 3000;
 const publicDir = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
@@ -99,6 +100,6 @@ app.get('*', (req, res) => {
         errorMessage: "404 page not found"
     })
 })
-app.listen(3000, () => {
-    console.log("server is up")
+app.listen(port, () => {
+    console.log("server is up"+ port)
 })
